@@ -1,0 +1,34 @@
+<div class="d-flex flex-row justify-content-center mt-5">
+    <div id="invest-details-2" class="">
+        <div class="d-flex flex-column align-items-center">
+            <div class="height-class mt-4 relative-class">
+                <input type="text" class="form-control input-details" name="cardNumber" [(ngModel)]="atmObj.cardNumber" required />
+                <span class="floating-address-label">Card Number</span>
+                <span *ngIf="atmObj.cardType =='master'" class="card-type">
+                    <img id="card-logo" src="assets/logos/mastercard-logo.png" alt="">
+                </span>
+                <span *ngIf="atmObj.cardType =='verve'" class="card-type">
+                    <img id="card-logo" src="assets/logos/verve-logo.png" alt="">
+                </span>
+                <span *ngIf="atmObj.cardType =='visa'" class="card-type">
+                    <img id="card-logo" src="assets/logos/visa-logo.png" alt="">
+                </span>
+            </div>
+            <div class="height-class mt-5 relative-class">
+                <input id="amount-input" type="text" class="form-control input-details" name="cardHolder" [(ngModel)]="atmObj.cardHolder" required />
+                <span class="floating-address-label">Card Holder</span>
+            </div>
+            <div class="height-class mt-5 d-flex flex-row mx-2">
+                <div class="datePicker">
+                    <input type="text" class="form-control short-input mr-3" name="expiryDate" [(ngModel)]="atmObj.expiryDate" required />
+                    <span class="floating-address-label">Expiry Date</span>
+                </div>
+                <div class="datePicker">
+                    <input type="password" class="form-control short-input" name="cvv" [(ngModel)]="atmObj.cvv" required />
+                    <span class="floating-address-label">CVV</span>
+                </div>
+            </div>
+        </div>
+     
+    </div>
+</div>

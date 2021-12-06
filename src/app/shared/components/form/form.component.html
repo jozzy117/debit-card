@@ -1,0 +1,38 @@
+<form #atm>
+    <div id="atmCard" class="form-group d-flex">
+        <div class="d-flex flex-column align-items-center">
+            <div class="height-class mt-5 relative-class">
+                <input type="text" class="form-control input-details" name="cardNumber"
+                 [(ngModel)]="atmObj.cardNumber" (keyup)="onKey($event)" required />
+                <span class="floating-address-label">Card Number</span>
+                <span *ngIf="atmObj.cardType =='master'" class="card-type">
+                    <img id="card-logo" src="assets/logos/mastercard-logo.png" alt="">
+                </span>
+                <span *ngIf="atmObj.cardType =='verve'" class="card-type">
+                    <img id="card-logo" src="assets/logos/verve-logo.png" alt="">
+                </span>
+                <span *ngIf="atmObj.cardType =='visa'" class="card-type">
+                    <img id="card-logo" src="assets/logos/visa-logo.png" alt="">
+                </span>
+            </div>
+            <div class="height-class mt-5 relative-class">
+                <input type="text" class="form-control input-details" name="cardHolder" [(ngModel)]="atmObj.cardHolder" required />
+                <span class="floating-address-label">Card Holder</span>
+            </div>
+            <div class="height-class mt-5">
+                <input type="text" class="form-control input-details" name="expiryDate" [(ngModel)]="atmObj.expiryDate" required />
+                <span class="floating-address-label">Expiry Date</span>
+            </div>
+            <div class="mt-5 relative-class">
+                <input type="password" class="form-control input-details" name="cvv" [(ngModel)]="atmObj.cvv" required />
+                <span class="floating-address-label">CVV Ex. 123 - check the back of your card</span>
+                <span class="cvv-info">This is the 3 or 4 digits found at the back of your card</span>
+            </div>
+            <div class="mt-5 mb-5">
+                <button type="submit" id="confirm-details" class="btn modal-btn mt-2" (click)="saveCard()">
+                    Continue
+                </button>
+            </div>
+        </div>
+    </div>
+</form>
